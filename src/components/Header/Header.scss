@@ -1,0 +1,35 @@
+// .searchbar {
+//     border: none;
+//     padding: 0;
+// }
+
+// .searchbar__input {
+//     background: url(../../assets/images/search.svg);
+//     background-repeat: no-repeat;
+//     background-position: left;
+//     text-indent: 0.75rem;
+//     padding: 0.8rem;
+// }
+
+.header__searchbar {
+    border: none;
+    padding: 0;
+}
+
+.header__searchbar--input {
+    border: 1px solid #555;
+    display: block;
+    padding: 0.5rem 0.3rem 0.5rem 2.5rem;
+    background: transparent url("../../assets/images/search.svg") no-repeat 0.8rem center;
+}
+
+.header__avatar {
+    border-radius: 50%;
+    height: 2.25rem;
+    width: 2.25rem;
+    margin: 1rem 0.5rem 1rem 0;
+}
+
+.header__button {
+    background: transparent url("../../assets/images/search.svg") no-repeat 0.8rem center;
+}
