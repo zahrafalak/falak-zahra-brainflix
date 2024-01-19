@@ -1,13 +1,16 @@
+@use '../../styles/partials/colors' as *;
+
 .header__searchbar {
     border: none;
     padding: 0;
 }
 
 .header__searchbar--input {
-    border: 1px solid #555;
+    border: 1px solid $mercury;
     display: block;
     padding: 0.5rem 0.3rem 0.5rem 2.5rem;
     background: transparent url("../../assets/images/search.svg") no-repeat 0.8rem center;
+    background-color: $alabaster;
 }
 
 .header__avatar {
@@ -33,7 +36,6 @@
 .button-icon {
     position: absolute;
     left: 3%;
-
 }
 
 span {
