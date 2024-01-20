@@ -1,34 +1,47 @@
 @use '../../styles/partials/colors' as *;
+@use '../../styles/partials/media' as *;
+
+.header {
+    @include tablet {
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+    }
+}
 
 .header__logo {
     display: block;
     margin: 1rem auto 0 auto;
     height: 1.5rem;
+
+    @include tablet {
+        margin-top: 0;
+        margin-right: 2.5rem;
+        ;
+    }
 }
 
 .header__searchbar {
-    border: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-.header__searchbar--input {
     border: 1px solid $mercury;
-    display: block;
-    padding: 0.8rem 0.3rem 0.8rem 2.5rem;
+    display: inline-block;
+    vertical-align: bottom;
+    padding: 1rem 0.3rem 1rem 2.5rem;
     margin: 1rem;
     background: transparent url("../../assets/images/search.svg") no-repeat 0.8rem center;
     background-color: $alabaster;
-    flex: 1;
     border-radius: 5px;
+    width: 70%;
 }
 
 .header__avatar {
     border-radius: 50%;
-    height: 2.25rem;
-    width: 2.25rem;
-    margin: 1rem 0.5rem;
+    height: 3rem;
+    width: 3rem;
+    margin: 1rem 0;
+
+    @include tablet {
+        order: 4;
+    }
 }
 
 .header__button {
@@ -43,14 +56,15 @@
     padding: 0.8rem;
     margin: 0 1rem;
     position: relative;
+    height: 3rem;
+
+    @include tablet {
+        order: 3;
+        width: 55%;
+    }
 }
 
 .button-icon {
     position: absolute;
     left: 3%;
-}
-
-span {
-    flex: auto;
-    text-align: center;
 }
