@@ -1,0 +1,11 @@
+@use '../../styles/partials/media' as *;
+
+
+.hero {
+    width: 100%;
+    margin-top: 1rem;
+
+    @include tablet {
+        margin: 0;
+    }
+}

@@ -1,6 +1,12 @@
+import './Hero.scss';
+
 function Hero() {
     return (
-        <>I'm the hero</>
+        <>
+            <section>
+                <video className="hero" controls poster="" ></video>
+            </section>
+        </>
     );
 }
 
