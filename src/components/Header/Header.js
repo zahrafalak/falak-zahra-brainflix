@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-function Header() {
-    return (
-        <>
-        </>
-    )
-}
-=======
 import brainflixLogo from '../../assets/images/BrainFlix-logo.svg';
 import avatar from '../../assets/images/Mohan-muruge.jpg';
 import uploadIcon from '../../assets/images/upload.svg';
@@ -27,4 +19,3 @@ const Header = () => {
 }
 
 export default Header;
->>>>>>> create-header
