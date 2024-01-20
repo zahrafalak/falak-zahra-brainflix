@@ -8,8 +8,9 @@ function Header() {
             <img className="header__logo" src={brainflixLogo} alt="Brainflix logo" />
             <form className="header__searchbar">
                 <input className="header__searchbar--input" type="search" placeholder="Search"></input>
+                <img className="header__avatar" src={avatar} alt="avatar" />
             </form>
-            <img className="header__avatar" src={avatar} alt="avatar" />
+
             <button className="header__button">
                 <img className='button-icon' src={uploadIcon} alt="icon" />
                 <span>UPLOAD</span>
