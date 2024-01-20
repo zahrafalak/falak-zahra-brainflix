@@ -2,7 +2,7 @@ import brainflixLogo from '../../assets/images/BrainFlix-logo.svg';
 import avatar from '../../assets/images/Mohan-muruge.jpg';
 import uploadIcon from '../../assets/images/upload.svg';
 import './Header.scss';
-function Header() {
+const Header = () => {
     return (
         <>
             <header className='header'>
