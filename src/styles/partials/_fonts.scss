@@ -15,3 +15,31 @@
     src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"),
         url(../../assets/fonts/Alternate/AvenirNextLTPro.ttf) format("truetype");
 }
+
+// ===TYPOGRAPHY===
+
+@mixin page-heading {
+    font-family: "AvenirNextBold";
+}
+
+@mixin section-heading {
+    font-family: "AvenirNextDemi";
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+@mixin subheading {
+    font-family: "AvenirNextDemi";
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+}
+
+@mixin body-text {
+    font-family: "AvenirNext";
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+}
+
+@mixin label-text {
+    font-family: "AvenirNextBold";
+}
