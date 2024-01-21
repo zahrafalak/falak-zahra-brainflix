@@ -12,96 +12,93 @@
     @include desktop {
         padding: 0 6rem;
     }
-}
 
-.hero__banner {
-    background-color: $secondary-black;
-    margin-top: 1rem;
+    &__banner {
+        background-color: $secondary-black;
+        margin-top: 1rem;
 
-    @include tablet {
-        margin-top: 0;
+        @include tablet {
+            margin-top: 0;
+        }
     }
 
+    &__video {
+        width: 100%;
 
-}
+        @include tablet {
+            margin: 0;
+            width: 90%;
+            padding: 0 2.5rem;
+        }
 
-.hero__video {
-    width: 100%;
-
-    @include tablet {
-        margin: 0;
-        width: 90%;
-        padding: 0 2.5rem;
+        @include desktop {
+            width: 60%;
+            padding: 0 12.5rem;
+        }
     }
 
-    @include desktop {
-        width: 60%;
-        padding: 0 12.5rem;
+    &__heading {
+        @include section-heading;
+
+        @include tablet {
+            @include page-heading;
+            margin-bottom: 0;
+        }
     }
-}
 
-.hero__heading {
-    @include section-heading;
+    &__details {
+        display: flex;
 
-    @include tablet {
-        @include page-heading;
-        margin-bottom: 0;
+        &--left {
+            flex: 1;
+
+            @include tablet {
+                display: flex;
+            }
+        }
+
+        &--right {
+            flex: 1;
+
+            @include tablet {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    &__data {
+        @include body-text;
+        display: inline-block;
+        color: $silver;
+
+        &--channel {
+            @include subheading;
+
+            @include tablet {
+                margin-right: 2.5rem;
+            }
+        }
+    }
+
+    &__icons {
+        margin: 0 1rem;
+        height: 1.3rem;
+    }
+
+    &__description {
+        @include body-text;
     }
 }
 
 .divider {
     border-top: 1px solid $mercury;
-}
 
-.divider--hero-top {
-    @extend .divider;
+    &--hero-top {
+        @extend .divider;
 
-    @include tablet {
-        display: none;
+        @include tablet {
+            display: none;
+        }
     }
-}
-
-.hero__details {
-    display: flex;
-}
-
-.hero__details--left {
-    flex: 1;
-
-    @include tablet {
-        display: flex;
-    }
-}
-
-.hero__details--right {
-    flex: 1;
-
-    @include tablet {
-        display: flex;
-        justify-content: flex-end;
-    }
-}
-
-.hero__data {
-    @include body-text;
-    display: inline-block;
-    color: $silver;
-
-}
-
-.hero__data--channel {
-    @include subheading;
-
-    @include tablet {
-        margin-right: 2.5rem;
-    }
-}
-
-.hero__icons {
-    margin: 0 1rem;
-    height: 1.3rem;
-}
-
-.hero__description {
-    @include body-text;
 }

@@ -11,67 +11,67 @@
     @include desktop {
         padding: 0 6rem;
     }
-}
 
-.header__logo {
-    display: block;
-    margin: 1rem auto 0 auto;
-    height: 1.5rem;
+    &__logo {
+        display: block;
+        margin: 1rem auto 0 auto;
+        height: 1.5rem;
 
-    @include tablet {
-        margin-top: 0;
-        margin-right: 4.5rem;
+        @include tablet {
+            margin-top: 0;
+            margin-right: 4.5rem;
+        }
+
+        @include desktop {
+            margin-right: 12.5rem;
+        }
     }
 
-    @include desktop {
-        margin-right: 12.5rem;
+    &__searchbar {
+        border: 1px solid $mercury;
+        display: inline-block;
+        vertical-align: bottom;
+        padding: 1rem 0.3rem 1rem 2.5rem;
+        margin: 1rem;
+        background: transparent url("../../assets/images/search.svg") no-repeat 0.8rem center;
+        background-color: $alabaster;
+        border-radius: 5px;
+        width: 70%;
+
+        @include tablet {
+            margin: 1rem 0;
+        }
     }
-}
 
-.header__searchbar {
-    border: 1px solid $mercury;
-    display: inline-block;
-    vertical-align: bottom;
-    padding: 1rem 0.3rem 1rem 2.5rem;
-    margin: 1rem;
-    background: transparent url("../../assets/images/search.svg") no-repeat 0.8rem center;
-    background-color: $alabaster;
-    border-radius: 5px;
-    width: 70%;
-
-    @include tablet {
+    &__avatar {
+        border-radius: 50%;
+        height: 3rem;
+        width: 3rem;
         margin: 1rem 0;
+
+        @include tablet {
+            order: 4;
+        }
     }
-}
 
-.header__avatar {
-    border-radius: 50%;
-    height: 3rem;
-    width: 3rem;
-    margin: 1rem 0;
+    &__button {
+        background-color: #0095FF;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 93%;
+        padding: 0.8rem;
+        margin: 0 1rem;
+        position: relative;
+        height: 3rem;
 
-    @include tablet {
-        order: 4;
-    }
-}
-
-.header__button {
-    background-color: #0095FF;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 93%;
-    padding: 0.8rem;
-    margin: 0 1rem;
-    position: relative;
-    height: 3rem;
-
-    @include tablet {
-        order: 3;
-        width: 55%;
+        @include tablet {
+            order: 3;
+            width: 55%;
+        }
     }
 }
 
