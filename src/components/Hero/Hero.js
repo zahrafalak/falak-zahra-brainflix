@@ -9,7 +9,7 @@ function Hero() {
             <video className="hero__video" controls poster={videos[0].image} ></video>
             <section className='hero'>
                 <h1 className='hero__heading'>{videos[0].title}</h1>
-                <hr className='divider'></hr>
+                <hr className='divider--hero-top'></hr>
                 <div className='hero__details'>
                     <div className='hero__details--left'>
                         <p className='hero__data--channel'>By {videos[0].channel}</p>

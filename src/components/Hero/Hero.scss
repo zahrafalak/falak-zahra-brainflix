@@ -4,6 +4,10 @@
 
 .hero {
     padding: 0 1rem;
+
+    @include tablet {
+        padding: 0 2rem;
+    }
 }
 
 .hero__video {
@@ -17,10 +21,23 @@
 
 .hero__heading {
     @include section-heading;
+
+    @include tablet {
+        @include page-heading;
+        margin-bottom: 0;
+    }
 }
 
 .divider {
     border-top: 1px solid $mercury;
+}
+
+.divider--hero-top {
+    @extend .divider;
+
+    @include tablet {
+        display: none;
+    }
 }
 
 .hero__details {
@@ -29,10 +46,19 @@
 
 .hero__details--left {
     flex: 1;
+
+    @include tablet {
+        display: flex;
+    }
 }
 
 .hero__details--right {
     flex: 1;
+
+    @include tablet {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 .hero__data {
@@ -44,6 +70,10 @@
 
 .hero__data--channel {
     @include subheading;
+
+    @include tablet {
+        margin-right: 2.5rem;
+    }
 }
 
 .hero__icons {
