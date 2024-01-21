@@ -2,7 +2,6 @@ import './Hero.scss';
 import videos from '../../data/video-details.json';
 import viewsIcon from '../../assets/images/views.svg';
 import likesIcon from '../../assets/images/likes.svg';
-console.log(videos);
 function Hero() {
     return (
         <>

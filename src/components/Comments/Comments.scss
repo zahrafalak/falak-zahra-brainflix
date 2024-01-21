@@ -1,0 +1,52 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/media' as *;
+@use '../../styles/partials/fonts' as *;
+
+.comments {
+    margin: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comments__data {
+    @include subheading;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comments__data--time {
+    @include body-text;
+    color: $silver;
+}
+
+.comments__text {
+    @include body-text;
+    margin: 0;
+}
+
+.comments__avatar {
+    vertical-align: middle;
+    border-radius: 50%;
+    height: 2.25rem;
+    width: 2.25rem;
+    margin: 1rem 0.5rem 1rem 0;
+    background-color: $mercury;
+}
+
+.comments__details {
+    width: 90%;
+}
+
+.comments__divider {
+    border-top: 1px solid $mercury;
+    margin: 1rem 1rem 0 1rem;
+
+    &--hero-top {
+        @extend .comments__divider;
+
+        @include tablet {
+            display: none;
+        }
+    }
+}
