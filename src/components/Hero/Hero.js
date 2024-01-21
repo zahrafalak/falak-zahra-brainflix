@@ -6,7 +6,10 @@ console.log(videos);
 function Hero() {
     return (
         <>
-            <video className="hero__video" controls poster={videos[0].image} ></video>
+            <div className='hero__banner'>
+                <video className="hero__video" controls poster={videos[0].image} ></video>
+            </div>
+
             <section className='hero'>
                 <h1 className='hero__heading'>{videos[0].title}</h1>
                 <hr className='divider--hero-top'></hr>

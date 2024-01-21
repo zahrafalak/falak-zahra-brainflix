@@ -8,14 +8,35 @@
     @include tablet {
         padding: 0 2rem;
     }
+
+    @include desktop {
+        padding: 0 6rem;
+    }
+}
+
+.hero__banner {
+    background-color: $secondary-black;
+    margin-top: 1rem;
+
+    @include tablet {
+        margin-top: 0;
+    }
+
+
 }
 
 .hero__video {
     width: 100%;
-    margin-top: 1rem;
 
     @include tablet {
         margin: 0;
+        width: 90%;
+        padding: 0 2.5rem;
+    }
+
+    @include desktop {
+        width: 60%;
+        padding: 0 12.5rem;
     }
 }
 
