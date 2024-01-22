@@ -1,7 +1,9 @@
-import videos from '../../data/video-details.json';
+import videos from '../../data/video-details.json'
 import './Comments.scss';
 
 function VideoComments() {
+
+
     const firstVideoCommentArray = videos[0].comments;
     return (
         <>
