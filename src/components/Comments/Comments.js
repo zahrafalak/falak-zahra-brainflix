@@ -1,6 +1,5 @@
 import videos from '../../data/video-details.json';
 import './Comments.scss';
-import avatarImage from '../../assets/images/Mohan-muruge.jpg';
 
 function VideoComments() {
     const firstVideoCommentArray = videos[0].comments;
