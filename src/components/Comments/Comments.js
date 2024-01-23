@@ -1,23 +1,20 @@
-import videos from '../../data/video-details.json'
 import './Comments.scss';
 
-function VideoComments() {
-
-
-    const firstVideoCommentArray = videos[0].comments;
+const VideoComments = (props) => {
+    const videoComments = props.comments;
     return (
         <>
-            {firstVideoCommentArray.map((props) => {
+            {videoComments.map((comments) => {
                 return (
                     <>
                         <div className='comments'>
                             <img className='comments__avatar' alt="" />
                             <div className='comments__details'>
                                 <section className='comments__data'>
-                                    <h4 className='comments__data--name'>{props.name}</h4>
-                                    <p className='comments__data--time'>{formatDate(props.timestamp)}</p>
+                                    <h4 className='comments__data--name'>{comments.name}</h4>
+                                    <p className='comments__data--time'>{formatDate(comments.timestamp)}</p>
                                 </section>
-                                <p className='comments__text'>{props.comment}</p>
+                                <p className='comments__text'>{comments.comment}</p>
                             </div>
                         </div>
                         <hr className='comments__divider'></hr>
