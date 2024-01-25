@@ -1,26 +1,28 @@
 import './Form.scss';
 import avatarImage from '../../assets/images/Mohan-muruge.jpg';
+import commentIcon from '../../assets/images/add_comment.svg';
 
 function Form() {
     return (
         <>
             <section className='form__section'>
                 <h4 className='form__heading'>3 comments</h4>
-                <div class="form">
-                    <img class="comments__avatar" src={avatarImage} alt="" />
-                    <div>
-                        <form class="form__fields">
-                            <label class="form__label" for="user">NAME</label>
-                            <input id="user" class="form__input" type="text" name="user" placeholder="Enter your name" />
-                            <label class="form__label" for="comment">COMMENT</label>
-                            <textarea id="comment" class="form__input--comment" name="text"
+                <div className="form">
+                    <img className="comments__avatar" src={avatarImage} alt="" />
+                    <form className="form__fields">
+                        <div>
+                            <label className="form__label" for="comment">JOIN THE CONVERSATION</label>
+                            <textarea id="comment" className="form__input--comment" name="text"
                                 placeholder="Add a new comment"></textarea>
-                            <button class="button">COMMENT</button>
-                        </form>
-                    </div>
+                        </div>
+                        <button className="form__button">
+                            <img className='button-icon' src={commentIcon} alt="icon" />
+                            <span>COMMENT</span>
+                        </button>
+                    </form>
                 </div>
             </section>
-            <hr class="divider"></hr>
+            <hr className="divider"></hr>
         </>
     );
 }

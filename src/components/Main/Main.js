@@ -1,6 +1,7 @@
 import videos from '../../data/video-details.json';
 import Hero from '../Hero/Hero';
 import Comments from '../Comments/Comments';
+import Form from '../Form/Form';
 
 
 
@@ -10,6 +11,7 @@ const Main = () => {
     return (
         <>
             <Hero firstVideo={firstVideoObj} />
+            <Form />
             <Comments comments={firstVideoComments} />
         </>
     );
