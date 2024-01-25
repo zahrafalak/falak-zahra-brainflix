@@ -6,6 +6,10 @@
     margin: 0 1rem;
     display: flex;
     justify-content: space-between;
+
+    @include tablet {
+        margin: 0 3rem;
+    }
 }
 
 .comments__data {
@@ -41,6 +45,10 @@
 .comments__divider {
     border-top: 1px solid $mercury;
     margin: 1rem 1rem 0 1rem;
+
+    @include tablet {
+        margin: 1rem 3rem 0 3rem;
+    }
 
     &--hero-top {
         @extend .comments__divider;
