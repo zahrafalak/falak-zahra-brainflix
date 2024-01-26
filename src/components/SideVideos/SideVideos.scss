@@ -1,0 +1,39 @@
+@use '../../styles/partials/media' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/colors' as *;
+
+.sidevideo__image {
+    max-width: 8rem;
+    max-height: 5rem;
+    background-color: $mercury;
+    border-radius: 4px;
+    margin-right: 1rem;
+    flex: 1;
+    object-fit: cover;
+}
+
+.sidevideo__heading {
+    @include subheading;
+    color: $silver;
+    margin: 1rem;
+}
+
+.sidevideo__card {
+    display: flex;
+    margin: 1rem;
+}
+
+.sidevideo__details {
+    flex: 2;
+    @include subheading;
+}
+
+.sidevideo__details--title {
+    margin: 0;
+}
+
+.sidevideo__details--channel {
+    @include body-text;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
