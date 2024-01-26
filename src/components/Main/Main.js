@@ -11,22 +11,19 @@ import { useState } from 'react';
 const Main = () => {
 
     const [videoIndex, setVideoIndex] = useState(0);
+    const updateIndex = (id) => { setVideoIndex(id) }
     const commentsArray = videos[videoIndex].comments;
 
+    const mainVideos = videos;
     const sideVideosArray = sideVideos;
 
     return (
         <>
 
             <Hero currentVideo={videos[videoIndex]} />
-            <div>
-                <button onClick={() => { setVideoIndex(0) }}>First video</button>
-                <button onClick={() => { setVideoIndex(1) }}>Second video</button>
-                <button onClick={() => { setVideoIndex(2) }}>Third video</button>
-            </div>
             <Form />
             <Comments comments={commentsArray} />
-            <SideVideos sideVideosArray={sideVideosArray} />
+            <SideVideos sideVideosArray={sideVideosArray} mainVideos={mainVideos} updateIndex={updateIndex} />
 
 
         </>

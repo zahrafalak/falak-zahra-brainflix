@@ -4,10 +4,10 @@ const VideoComments = (props) => {
     const videoComments = props.comments;
     return (
         <>
-            {videoComments.map((comments) => {
+            {videoComments.map((comments, index) => {
                 return (
                     <>
-                        <div className='comments'>
+                        <div className='comments' id={index}>
                             <img className='comments__avatar' alt="" />
                             <div className='comments__details'>
                                 <section className='comments__data'>
