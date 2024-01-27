@@ -39,6 +39,7 @@
 
     &__heading {
         @include section-heading;
+        color: $primary-black;
 
         @include tablet {
             @include page-heading;
@@ -48,6 +49,7 @@
 
     &__details {
         display: flex;
+        margin-bottom: 1rem;
 
         &--left {
             flex: 1;
@@ -71,9 +73,12 @@
         @include body-text;
         display: inline-block;
         color: $silver;
+        margin-bottom: 0;
 
         &--channel {
             @include subheading;
+            color: $primary-black;
+            margin-bottom: 0;
 
             @include tablet {
                 margin-right: 2.5rem;
@@ -88,6 +93,7 @@
 
     &__description {
         @include body-text;
+        color: $primary-black;
     }
 }
 
