@@ -8,7 +8,11 @@
     justify-content: space-between;
 
     @include tablet {
-        margin: 0 3rem;
+        margin: 0 2rem;
+    }
+
+    @include desktop {
+        margin: 0 6rem;
     }
 }
 
@@ -17,6 +21,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.comments__data--name {
+    @include tablet {
+        margin: 0;
+    }
 }
 
 .comments__data--time {
@@ -36,6 +46,11 @@
     width: 2.25rem;
     margin: 1rem 0.5rem 1rem 0;
     background-color: $mercury;
+
+    @include tablet {
+        height: 3.25rem;
+        width: 3.25rem;
+    }
 }
 
 .comments__details {
@@ -47,7 +62,11 @@
     margin: 1rem 1rem 0 1rem;
 
     @include tablet {
-        margin: 1rem 3rem 0 3rem;
+        margin: 1rem 2rem 0 2rem;
+    }
+
+    @include desktop {
+        margin: 1rem 6rem 0 6rem;
     }
 
     &--hero-top {
