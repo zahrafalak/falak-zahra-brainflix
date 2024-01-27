@@ -1,24 +1,24 @@
 import './Comments.scss';
 
-const VideoComments = (props) => {
-    const videoComments = props.comments;
+const VideoComments = ({ comments }) => {
+
     return (
         <>
-            {videoComments.map((comments, index) => {
+            {comments.map((comment) => {
                 return (
-                    <>
-                        <div className='comments' id={index}>
+                    <div key={comment.id}>
+                        <div className='comments' id={comment.id}>
                             <img className='comments__avatar' alt="" />
                             <div className='comments__details'>
                                 <section className='comments__data'>
-                                    <h4 className='comments__data--name'>{comments.name}</h4>
-                                    <p className='comments__data--time'>{formatDate(comments.timestamp)}</p>
+                                    <h4 className='comments__data--name'>{comment.name}</h4>
+                                    <p className='comments__data--time'>{formatDate(comment.timestamp)}</p>
                                 </section>
-                                <p className='comments__text'>{comments.comment}</p>
+                                <p className='comments__text'>{comment.comment}</p>
                             </div>
                         </div>
                         <hr className='comments__divider'></hr>
-                    </>
+                    </div>
                 );
             })}
         </>

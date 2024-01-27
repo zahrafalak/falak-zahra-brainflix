@@ -11,7 +11,7 @@ function Form() {
                     <img className="comments__avatar" src={avatarImage} alt="" />
                     <form className="form__fields">
                         <div>
-                            <label className="form__label" for="comment">JOIN THE CONVERSATION</label>
+                            <label className="form__label" htmlFor="comment">JOIN THE CONVERSATION</label>
                             <textarea id="comment" className="form__input--comment" name="text"
                                 placeholder="Add a new comment"></textarea>
                         </div>

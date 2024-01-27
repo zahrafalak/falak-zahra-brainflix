@@ -1,20 +1,20 @@
 import './SideVideos.scss';
 
-const SideVideos = ({ sideVideosArray, updateIndex }) => {
+const SideVideos = ({ filteredArray, updateMainVideo }) => {
     return (
         <>
             <h4 className='sidevideo__heading'>NEXT VIDEOS</h4>
-            {sideVideosArray.map((videos, index) => {
+            {filteredArray.map((video) => {
+
                 return (
-                    <div className='sidevideo__card'
-                        // id={index}
-                        onClick={() => { updateIndex(index) }}>
-                        <img className="sidevideo__image" src={videos.image} alt="" />
+                    <div key={video.id} className='sidevideo__card' onClick={() => { updateMainVideo(video.id); }}>
+                        <img className="sidevideo__image" src={video.image} alt="" />
                         <section className='sidevideo__details'>
-                            <h4 className='sidevideo__details--title'>{videos.title}</h4>
-                            <p className='sidevideo__details--channel'>{videos.channel}</p>
+                            <h4 className='sidevideo__details--title'>{video.title}</h4>
+                            <p className='sidevideo__details--channel'>{video.channel}</p>
                         </section>
                     </div>
+
                 );
             })}
         </>
