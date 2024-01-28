@@ -6,10 +6,18 @@
 .form {
     display: flex;
 
+    @include desktop {
+        padding-right: 1rem;
+    }
+
 
     &__label {
         @include subheading;
         color: $silver;
+
+        @include desktop {
+            font-size: 1rem;
+        }
     }
 
     &__input {
@@ -58,12 +66,13 @@
     }
 
     @include desktop {
-        margin: 0 6rem;
+        padding: 0 0 0 6rem;
+        margin: 0;
     }
 
     &__heading {
         @include subheading;
-        color: $primary-black;
+
     }
 }
 

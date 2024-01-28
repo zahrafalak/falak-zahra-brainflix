@@ -12,7 +12,8 @@
     }
 
     @include desktop {
-        margin: 0 6rem;
+        margin: 0 0 0 6rem;
+        padding-right: 1rem;
     }
 }
 
@@ -51,6 +52,10 @@
         height: 3.25rem;
         width: 3.25rem;
     }
+
+    @include desktop {
+        margin-right: 1.5rem;
+    }
 }
 
 .comments__details {
@@ -66,7 +71,7 @@
     }
 
     @include desktop {
-        margin: 1rem 6rem 0 6rem;
+        margin: 1rem 0 0 6rem;
     }
 
     &--hero-top {

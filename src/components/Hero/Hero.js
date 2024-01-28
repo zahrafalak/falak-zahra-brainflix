@@ -6,9 +6,6 @@ const Hero = (props) => {
     const currentVideo = props.currentVideo;
     return (
         <>
-            <div className='hero__banner'>
-                <video className="hero__video" controls poster={currentVideo.image} ></video>
-            </div>
 
             <section className='hero'>
                 <h1 className='hero__heading'>{currentVideo.title}</h1>

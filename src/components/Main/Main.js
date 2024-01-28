@@ -1,12 +1,14 @@
 import videos from '../../data/video-details.json';
 import sideVideosArray from '../../data/videos.json';
+
+import Banner from '../../components/Banner/Banner';
 import Hero from '../Hero/Hero';
 import Comments from '../Comments/Comments';
 import Form from '../Form/Form';
 import SideVideosComponent from '../SideVideos/SideVideos';
+
+import './Main.scss';
 import { useState } from 'react';
-
-
 
 const Main = () => {
 
@@ -38,14 +40,20 @@ const Main = () => {
 
     return (
         <>
-
-            <Hero currentVideo={currentVideo} />
-            <Form />
-            <Comments comments={currentVideoComments} />
-            <SideVideosComponent
-                filteredArray={filteredArray}
-                updateMainVideo={updateMainVideo}
-            />
+            <Banner currentVideo={currentVideo} />
+            <div className='video-details'>
+                <div className='video-details--main'>
+                    <Hero currentVideo={currentVideo} />
+                    <Form />
+                    <Comments comments={currentVideoComments} />
+                </div>
+                <div className='video-details--side'>
+                    <SideVideosComponent
+                        filteredArray={filteredArray}
+                        updateMainVideo={updateMainVideo}
+                    />
+                </div>
+            </div>
         </>
     );
 }

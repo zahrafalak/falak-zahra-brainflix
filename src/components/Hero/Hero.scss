@@ -10,7 +10,7 @@
     }
 
     @include desktop {
-        padding: 0 6rem;
+        padding: 0 0 0 6rem;
     }
 
     &__banner {
@@ -39,7 +39,6 @@
 
     &__heading {
         @include section-heading;
-        color: $primary-black;
 
         @include tablet {
             @include page-heading;
@@ -66,6 +65,10 @@
                 display: flex;
                 justify-content: flex-end;
             }
+
+            @include desktop {
+                padding-right: 1rem;
+            }
         }
     }
 
@@ -75,9 +78,12 @@
         color: $silver;
         margin-bottom: 0;
 
+        @include desktop {
+            font-size: 1rem;
+        }
+
         &--channel {
             @include subheading;
-            color: $primary-black;
             margin-bottom: 0;
 
             @include tablet {
@@ -89,11 +95,19 @@
     &__icons {
         margin: 0 1rem;
         height: 1.3rem;
+
+        @include desktop {
+            height: 1.1rem;
+        }
     }
 
     &__description {
         @include body-text;
-        color: $primary-black;
+
+        @include desktop {
+            padding-right: 1rem;
+        }
+
     }
 }
 

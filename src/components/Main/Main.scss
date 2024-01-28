@@ -1,0 +1,17 @@
+@use '../../styles/partials/media' as *;
+@use '../../styles/partials/colors' as *;
+
+.video-details {
+    @include desktop {
+        display: flex;
+    }
+
+    &--main {
+        flex: 2;
+    }
+
+    &--side {
+        flex: 1;
+        border-left: 1px solid $mercury;
+    }
+}
