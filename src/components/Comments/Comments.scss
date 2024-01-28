@@ -15,70 +15,70 @@
         margin: 0 0 0 6rem;
         padding-right: 1rem;
     }
-}
 
-.comments__data {
-    @include subheading;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    &__data {
+        @include subheading;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-.comments__data--name {
-    @include tablet {
+        &--name {
+            @include tablet {
+                margin: 0;
+            }
+        }
+
+        &--time {
+            @include body-text;
+            color: $silver;
+        }
+    }
+
+    &__text {
+        @include body-text;
         margin: 0;
     }
-}
 
-.comments__data--time {
-    @include body-text;
-    color: $silver;
-}
-
-.comments__text {
-    @include body-text;
-    margin: 0;
-}
-
-.comments__avatar {
-    vertical-align: middle;
-    border-radius: 50%;
-    height: 2.25rem;
-    width: 2.25rem;
-    margin: 1rem 0.5rem 1rem 0;
-    background-color: $mercury;
-
-    @include tablet {
-        height: 3.25rem;
-        width: 3.25rem;
-    }
-
-    @include desktop {
-        margin-right: 1.5rem;
-    }
-}
-
-.comments__details {
-    width: 90%;
-}
-
-.comments__divider {
-    border-top: 1px solid $mercury;
-    margin: 1rem 1rem 0 1rem;
-
-    @include tablet {
-        margin: 1rem 2rem 0 2rem;
-    }
-
-    @include desktop {
-        margin: 1rem 0 0 6rem;
-    }
-
-    &--hero-top {
-        @extend .comments__divider;
+    &__avatar {
+        vertical-align: middle;
+        border-radius: 50%;
+        height: 2.25rem;
+        width: 2.25rem;
+        margin: 1rem 0.5rem 1rem 0;
+        background-color: $mercury;
 
         @include tablet {
-            display: none;
+            height: 3.25rem;
+            width: 3.25rem;
+        }
+
+        @include desktop {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__details {
+        width: 90%;
+    }
+
+    &__divider {
+        border-top: 1px solid $mercury;
+        margin: 1rem 1rem 0 1rem;
+
+        @include tablet {
+            margin: 1rem 2rem 0 2rem;
+        }
+
+        @include desktop {
+            margin: 1rem 0 0 6rem;
+        }
+
+        &--hero-top {
+            @extend .comments__divider;
+
+            @include tablet {
+                display: none;
+            }
         }
     }
 }

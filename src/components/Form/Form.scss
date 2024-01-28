@@ -56,6 +56,18 @@
             margin-right: 2rem;
         }
     }
+
+    &__button {
+        @extend .header__button;
+        margin: 0 0 1rem 0;
+        width: 100%;
+        flex: 1;
+
+        @include tablet {
+            width: 25%;
+            margin: 0.25rem 0 0 0;
+        }
+    }
 }
 
 .form-section {
@@ -73,17 +85,5 @@
     &__heading {
         @include subheading;
 
-    }
-}
-
-.form__button {
-    @extend .header__button;
-    margin: 0 0 1rem 0;
-    width: 100%;
-    flex: 1;
-
-    @include tablet {
-        width: 25%;
-        margin: 0.25rem 0 0 0;
     }
 }
