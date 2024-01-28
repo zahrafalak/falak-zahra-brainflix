@@ -47,6 +47,10 @@
             @include tablet {
                 width: 45%;
             }
+
+            @include desktop {
+                width: 100%;
+            }
         }
 
         &--channel {
