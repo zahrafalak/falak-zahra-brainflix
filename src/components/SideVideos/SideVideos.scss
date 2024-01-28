@@ -43,6 +43,10 @@
 
         &--title {
             margin: 0;
+
+            @include tablet {
+                width: 45%;
+            }
         }
 
         &--channel {
