@@ -1,12 +1,12 @@
 import './App.scss';
 import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import MainVideoPage from './pages/HomePage/HomePage';
 
 function App() {
   return (
     <>
       <Header />
-      <Main />
+      <MainVideoPage />
     </>
   );
 }

@@ -2,16 +2,15 @@ import videos from '../../data/video-details.json';
 import sideVideosArray from '../../data/videos.json';
 
 import Banner from '../../components/Banner/Banner';
-import Hero from '../Hero/Hero';
-import Comments from '../Comments/Comments';
-import Form from '../Form/Form';
-import SideVideosComponent from '../SideVideos/SideVideos';
+import Hero from '../../components/Hero/Hero';
+import Comments from '../../components/Comments/Comments';
+import Form from '../../components/Form/Form';
+import SideVideosComponent from '../../components/SideVideos/SideVideos';
 
-import './Main.scss';
+import './HomePage.scss';
 import { useState } from 'react';
 
-const Main = () => {
-
+const MainVideoPage = () => {
     const [mainVideoID, setMainVideoID] = useState(videos[0].id);
 
     // This function takes in an ID and uses it to return the object associated 
@@ -58,4 +57,4 @@ const Main = () => {
     );
 }
 
-export default Main;
+export default MainVideoPage;
