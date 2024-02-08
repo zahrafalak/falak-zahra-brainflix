@@ -1,7 +1,7 @@
 import './Comments.scss';
 
-const VideoComments = ({ comments }) => {
-
+const VideoComments = ({ mainVideoData }) => {
+    const comments = mainVideoData.comments;
     return (
         <>
             {comments.map((comment) => {

@@ -1,10 +1,10 @@
 
 
-const Banner = (props) => {
-    const currentVideo = props.currentVideo;
+const Banner = ({ mainVideoData }) => {
+
     return (
         < div className='hero__banner' >
-            <video className="hero__video" controls poster={currentVideo.image} ></video>
+            <video className="hero__video" controls poster={mainVideoData.image} ></video>
         </div >
     )
 

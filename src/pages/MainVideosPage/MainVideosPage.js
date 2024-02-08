@@ -7,6 +7,8 @@ const MainVideoPage = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path=":id" element={<VideoDetailsPage />} />
+                {/* <Route path="*" element={<ErrorPage />} /> */}
             </Routes>
         </BrowserRouter>
     );
