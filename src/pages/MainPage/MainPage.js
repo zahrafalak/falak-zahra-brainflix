@@ -4,14 +4,16 @@ import Comments from '../../components/Comments/Comments';
 import Form from '../../components/Form/Form';
 import SideVideosComponent from '../../components/SideVideos/SideVideos';
 
-import './HomePage.scss';
-import { useEffect, useState } from 'react';
+import './MainPage.scss';
+import { useEffect, useState, useParams } from 'react';
 import axios from 'axios';
 
-const HomePage = () => {
+const MainPage = () => {
 
-    const [mainVideoID] = useState("84e96018-4022-434e-80bf-000ce4cd12b8");
-    const [mainVideoData, setMainVideoData] = useState("");
+    // const { id } = useParams();
+
+    const [mainVideoID, setMainVideoID] = useState("84e96018-4022-434e-80bf-000ce4cd12b8");
+    const [mainVideoData, setMainVideoData] = useState(null);
     const [sideVideos, setSideVideos] = useState([]);
     const [isMainLoaded, setIsMainLoaded] = useState(false)
     const [isSideLoaded, setIsSideLoaded] = useState(false)
@@ -73,4 +75,4 @@ const HomePage = () => {
     );
 }
 
-export default HomePage;
+export default MainPage;
