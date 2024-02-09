@@ -25,8 +25,9 @@ const MainPage = () => {
   useEffect(() => {
     const fetchMainVideo = async () => {
       try {
-        if (!id) {
-          setMainVideoID("84e96018-4022-434e-80bf-000ce4cd12b8");
+        if (id) {
+          setMainVideoID(id);
+          console.log(mainVideoID);
           // setIsMainLoaded(false)
           const response = await axios.get(
             `${baseURL}/videos/${mainVideoID}?api_key=${apiKey}`
@@ -34,41 +35,50 @@ const MainPage = () => {
           const mainVideoData = response.data;
           setMainVideoData(mainVideoData);
           setIsMainLoaded(true);
-        } else if (id) {
-          setMainVideoID(id);
+        } else {
+          setMainVideoID("84e96018-4022-434e-80bf-000ce4cd12b8");
           const response = await axios.get(
             `${baseURL}/videos/${mainVideoID}?api_key=${apiKey}`
           );
           const mainVideoData = response.data;
           setMainVideoData(mainVideoData);
           setIsMainLoaded(true);
-        } else {
-          {
-            console.log("ID not found");
-          }
         }
       } catch (error) {
         console.error("Error fetching main video:", error);
       }
     };
 
-    const fetchSideVideos = async () => {
-      try {
-        // setIsSideLoaded(false)
-        const response = await axios.get(
-          `${baseURL}/videos/?api_key=${apiKey}`
-        );
-        const sideVideosArray = response.data;
-        setSideVideos(sideVideosArray);
-        setIsSideLoaded(true);
-      } catch (error) {
-        console.error("Error fetching side videos:", error);
-      }
-    };
+    // const fetchSideVideos = async () => {
+    //   try {
+    //     // setIsSideLoaded(false)
+    //     const response = await axios.get(
+    //       `${baseURL}/videos/?api_key=${apiKey}`
+    //     );
+    //     const sideVideosArray = response.data;
+    //     setSideVideos(sideVideosArray);
+    //     setIsSideLoaded(true);
+    //   } catch (error) {
+    //     console.error("Error fetching side videos:", error);
+    //   }
+    // };
 
     fetchMainVideo();
-    fetchSideVideos();
-  }, [id]);
+    // fetchSideVideos();
+  }, [mainVideoID, id]);
+
+  const fetchSideVideos = async () => {
+    try {
+      // setIsSideLoaded(false);
+      const response = await axios.get(`${baseURL}/videos/?api_key=${apiKey}`);
+      const sideVideosArray = response.data;
+      setSideVideos(sideVideosArray);
+      setIsSideLoaded(true);
+    } catch (error) {
+      console.error("Error fetching side videos:", error);
+    }
+  };
+  fetchSideVideos();
 
   return (
     <>
