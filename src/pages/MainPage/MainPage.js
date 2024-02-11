@@ -35,6 +35,8 @@ const MainPage = () => {
           const mainVideoData = await response.data;
           setMainVideoData(mainVideoData);
           setIsMainLoaded(true);
+          //scroll to the top of page when component re-renders
+          window.scrollTo(0, 0);
         } else {
           // if no id found, get the id of the first video and set that to state
           const response1 = await axios.get(
