@@ -19,6 +19,7 @@ const MainPage = () => {
   const [sideVideos, setSideVideos] = useState([]);
   const [isMainLoaded, setIsMainLoaded] = useState(false);
   const [isSideLoaded, setIsSideLoaded] = useState(false);
+
   const apiKey = "2d8b3e97-9324-4fa1-9840-920c9b5b7921";
   const baseURL = "https://project-2-api.herokuapp.com";
 
@@ -26,17 +27,20 @@ const MainPage = () => {
     const fetchMainVideo = async () => {
       try {
         if (id) {
+          // if id is present in the URL, set mainVideoID to that state
           setMainVideoID(id);
-          console.log(mainVideoID);
-          // setIsMainLoaded(false)
           const response = await axios.get(
             `${baseURL}/videos/${mainVideoID}?api_key=${apiKey}`
           );
-          const mainVideoData = response.data;
+          const mainVideoData = await response.data;
           setMainVideoData(mainVideoData);
           setIsMainLoaded(true);
         } else {
-          setMainVideoID("84e96018-4022-434e-80bf-000ce4cd12b8");
+          // if no id found, get the id of the first video and set that to state
+          const response1 = await axios.get(
+            `${baseURL}/videos/?api_key=${apiKey}`
+          );
+          setMainVideoID(response1.data[0].id);
           const response = await axios.get(
             `${baseURL}/videos/${mainVideoID}?api_key=${apiKey}`
           );
@@ -48,37 +52,24 @@ const MainPage = () => {
         console.error("Error fetching main video:", error);
       }
     };
-
-    // const fetchSideVideos = async () => {
-    //   try {
-    //     // setIsSideLoaded(false)
-    //     const response = await axios.get(
-    //       `${baseURL}/videos/?api_key=${apiKey}`
-    //     );
-    //     const sideVideosArray = response.data;
-    //     setSideVideos(sideVideosArray);
-    //     setIsSideLoaded(true);
-    //   } catch (error) {
-    //     console.error("Error fetching side videos:", error);
-    //   }
-    // };
-
     fetchMainVideo();
-    // fetchSideVideos();
   }, [mainVideoID, id]);
 
-  const fetchSideVideos = async () => {
-    try {
-      // setIsSideLoaded(false);
-      const response = await axios.get(`${baseURL}/videos/?api_key=${apiKey}`);
-      const sideVideosArray = response.data;
-      setSideVideos(sideVideosArray);
-      setIsSideLoaded(true);
-    } catch (error) {
-      console.error("Error fetching side videos:", error);
-    }
-  };
-  fetchSideVideos();
+  useEffect(() => {
+    const fetchSideVideos = async () => {
+      try {
+        const response = await axios.get(
+          `${baseURL}/videos/?api_key=${apiKey}`
+        );
+        const sideVideosArray = response.data;
+        setSideVideos(sideVideosArray);
+        setIsSideLoaded(true);
+      } catch (error) {
+        console.error("Error fetching side videos:", error);
+      }
+    };
+    fetchSideVideos();
+  }, []);
 
   return (
     <>
