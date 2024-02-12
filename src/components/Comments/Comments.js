@@ -31,7 +31,7 @@ function formatDate(timestamp) {
   const commentDate = new Date(timestamp);
   const formattedDate = `${("0" + (commentDate.getMonth() + 1)).slice(-2)}/${(
     "0" + commentDate.getDate()
-  ).slice(-2)}/ ${commentDate.getFullYear()}`;
+  ).slice(-2)}/${commentDate.getFullYear()}`;
   return formattedDate;
 }
 

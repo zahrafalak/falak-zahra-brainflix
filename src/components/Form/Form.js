@@ -2,10 +2,10 @@ import "./Form.scss";
 import avatarImage from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/images/add_comment.svg";
 
-function Form() {
+const Form = ({ mainVideoData }) => {
   return (
     <section className="form-section">
-      <h4 className="form-section__heading">3 comments</h4>
+      <h4 className="form-section__heading">{`${mainVideoData.comments.length} comments`}</h4>
       <div className="form">
         <img className="comments__avatar" src={avatarImage} alt="" />
         <form className="form__fields">
@@ -29,6 +29,6 @@ function Form() {
       <hr className="divider"></hr>
     </section>
   );
-}
+};
 
 export default Form;

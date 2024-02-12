@@ -81,7 +81,7 @@ const MainPage = () => {
           <div className="video-details">
             <div className="video-details--main">
               <Hero mainVideoData={mainVideoData} />
-              <Form />
+              <Form mainVideoData={mainVideoData} />
               <Comments mainVideoData={mainVideoData} />
             </div>
             <div className="video-details--side">
