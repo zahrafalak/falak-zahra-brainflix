@@ -1,5 +1,6 @@
 import publishIcon from "../../assets/images/publish.svg";
 import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
+
 const UploadPage = () => {
   return (
     <>
@@ -24,6 +25,7 @@ const UploadPage = () => {
           <img className="button-icon" src={publishIcon} alt="icon" />
           <span>PUBLISH</span>
         </button>
+        <button className="form__button">CANCEL</button>
       </form>
     </>
   );
