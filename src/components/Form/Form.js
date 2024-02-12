@@ -14,7 +14,6 @@ const Form = ({ mainVideoData }) => {
               JOIN THE CONVERSATION
             </label>
             <textarea
-              id="comment"
               className="form__input"
               name="text"
               placeholder="Add a new comment"
