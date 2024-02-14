@@ -1,0 +1,31 @@
+@use '../../styles/partials/colors' as *;
+// @use '../../styles/partials/media' as *;
+// @use '../../styles/partials/fonts' as *;
+@use '../../components/Form/Form.scss';
+
+.upload-section {
+    padding: 0 1rem;
+}
+
+.thumbnail {
+    @extend .form__label;
+    margin-bottom: 0.5rem;
+
+    &__image {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 1.2rem;
+    }
+}
+
+.form__input--title {
+    @extend .form__input;
+    height: 1.25rem;
+}
+
+.form__button--cancel {
+    @extend .form__button;
+    background-color: $white;
+    color: $primary-blue;
+}
+
