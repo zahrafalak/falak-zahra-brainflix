@@ -20,10 +20,12 @@ const Header = () => {
           placeholder="Search"
         ></input>
         <img className="header__avatar" src={avatar} alt="avatar" />
-        <button className="header__button">
-          <img className="button-icon" src={uploadIcon} alt="icon" />
-          <span>UPLOAD</span>
-        </button>
+        <Link to="/upload" className="link">
+          <button className="header__button">
+            <img className="button-icon" src={uploadIcon} alt="icon" />
+            UPLOAD
+          </button>
+        </Link>
       </header>
     </>
   );
