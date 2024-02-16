@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        <Link to="/">
+        <Link to="/" className="link__logo">
           <img
             className="header__logo"
             src={brainflixLogo}

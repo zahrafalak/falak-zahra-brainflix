@@ -9,7 +9,7 @@ const UploadPage = () => {
       <section className="upload-section">
         <h1 className="hero__heading">Upload Video</h1>
         <p className="thumbnail">VIDEO THUMBNAIL</p>
-        <img class="thumbnail__image" src={uploadPreview} />
+        <img className="thumbnail__image" src={uploadPreview} />
         <form className="form__fields">
           <label className="form__label">TITLE YOUR VIDEO</label>
           <input

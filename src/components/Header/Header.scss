@@ -40,6 +40,7 @@
 
         @include tablet {
             margin: 1rem 0;
+            flex:3;
         }
     }
 
@@ -51,10 +52,12 @@
 
         @include tablet {
             order: 4;
+            flex: 0;
         }
     }
 
     &__button {
+        text-decoration: none;
         background-color: #0095FF;
         color: #FFFFFF;
         border: none;
@@ -70,17 +73,27 @@
 
         @include tablet {
             order: 3;
-            width: 55%;
+            width: 85%;
+            flex:5;
         }
     }
-}
-
-.link {
-    text-decoration: none;
 }
 
 .button-icon {
     position: absolute;
     left: 3%;
+}
+
+.link {
+    text-decoration: none;
+    @include tablet {
+        flex:3;
+    }
+
+    &__logo {
+        @include tablet {
+            flex:0.5;
+        }
+    }
 }
 

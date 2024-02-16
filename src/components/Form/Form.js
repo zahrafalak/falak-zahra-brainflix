@@ -3,6 +3,10 @@ import avatarImage from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/images/add_comment.svg";
 
 const Form = ({ mainVideoData }) => {
+  const handleClick = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <section className="form-section">
       <h4 className="form-section__heading">{`${mainVideoData.comments.length} comments`}</h4>
@@ -19,7 +23,7 @@ const Form = ({ mainVideoData }) => {
               placeholder="Add a new comment"
             ></textarea>
           </div>
-          <button className="form__button">
+          <button className="form__button" onClick={handleClick}>
             <img className="button-icon" src={commentIcon} alt="icon" />
             <span>COMMENT</span>
           </button>
