@@ -14,29 +14,33 @@ const UploadPage = () => {
         <hr className="divider--upload"></hr>
         <p className="thumbnail">VIDEO THUMBNAIL</p>
         <img className="thumbnail__image" src={uploadPreview} />
-        <form className="form__fields--upload">
-          <label className="form__label">
-            TITLE YOUR VIDEO
-            <input
-              type="text"
-              className="form__input--title"
-              placeholder="Add a title to your video"
-            ></input>
-          </label>
-          <label className="form__label">
-            ADD A NEW VIDEO DESCRIPTION
-            <textarea
-              className="form__input--description"
-              name="text"
-              placeholder="Add a description to your video"
-            ></textarea>
-          </label>
+        <form>
+          <div className="form__upload">
+            <label className="form__label">
+              TITLE YOUR VIDEO
+              <input
+                type="text"
+                className="form__input--title"
+                placeholder="Add a title to your video"
+              ></input>
+            </label>
+            <label className="form__label">
+              ADD A NEW VIDEO DESCRIPTION
+              <textarea
+                className="form__input--description"
+                name="text"
+                placeholder="Add a description to your video"
+              ></textarea>
+            </label>
+          </div>
           <hr className="divider--upload"></hr>
           <button className="form__button--publish" onClick={handleClick}>
             <img className="button-icon" src={publishIcon} alt="icon" />
             PUBLISH
           </button>
-          <button className="form__button--cancel">CANCEL</button>
+          <button className="form__button--cancel" onClick={handleClick}>
+            CANCEL
+          </button>
         </form>
       </section>
     </>
