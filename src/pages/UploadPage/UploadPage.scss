@@ -1,29 +1,69 @@
-@use '../../styles/partials/colors' as *;
-@use '../../components/Form/Form.scss';
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/media" as *;
+@use "../../components/Form/Form.scss";
+@use "../../components/Hero/Hero.scss";
 
 .upload-section {
-    padding: 0 1rem;
+  padding: 0 1rem;
+
+  @include tablet {
+    padding: 0 2rem;
+  }
 }
 
 .thumbnail {
-    @extend .form__label;
-    margin-bottom: 0.5rem;
+  @extend .form__label;
+  margin-bottom: 0.5rem;
 
-    &__image {
-        width: 100%;
-        border-radius: 4px;
-        margin-bottom: 1.2rem;
+  &__image {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 1.2rem;
+    @include tablet {
+      width: 50%;
     }
+  }
 }
 
 .form__input--title {
-    @extend .form__input;
-    height: 1.25rem;
+  @extend .form__input;
+  height: 1.25rem;
+  @include tablet {
+    height: 2.25rem;
+  }
+}
+
+.form__input--description {
+  @extend .form__input;
+
+  @include tablet {
+    height: 6rem;
+  }
+}
+
+.form__button--publish {
+  @extend .form__button;
+  @include tablet {
+    position: absolute;
+    right: 2rem;
+  }
 }
 
 .form__button--cancel {
-    @extend .form__button;
-    background-color: $white;
-    color: $primary-blue;
+  @extend .form__button;
+  background-color: $white;
+  color: $primary-blue;
+  @include tablet {
+    position: absolute;
+    right: 15rem;
+  }
 }
 
+.divider--upload {
+  display: none;
+  @extend .divider;
+  @include tablet {
+    display: block;
+    margin: 1rem 0;
+  }
+}

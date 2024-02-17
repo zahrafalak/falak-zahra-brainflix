@@ -16,12 +16,12 @@ const Form = ({ mainVideoData }) => {
           <div className="form__block">
             <label className="form__label" htmlFor="comment">
               JOIN THE CONVERSATION
+              <textarea
+                className="form__input"
+                name="text"
+                placeholder="Add a new comment"
+              ></textarea>
             </label>
-            <textarea
-              className="form__input"
-              name="text"
-              placeholder="Add a new comment"
-            ></textarea>
           </div>
           <button className="form__button" onClick={handleClick}>
             <img className="button-icon" src={commentIcon} alt="icon" />
