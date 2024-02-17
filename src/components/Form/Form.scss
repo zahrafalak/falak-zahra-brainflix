@@ -53,6 +53,10 @@
       flex: 3;
       margin-right: 2rem;
     }
+    @include desktop {
+      flex: 3.5;
+      margin-right: 1rem;
+    }
   }
 
   &__button {
@@ -64,6 +68,10 @@
     @include tablet {
       width: 25%;
       margin: 0.25rem 0 0 0;
+    }
+
+    @include desktop {
+      flex: 1.5;
     }
   }
 }

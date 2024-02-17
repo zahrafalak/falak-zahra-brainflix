@@ -1,6 +1,7 @@
 import publishIcon from "../../assets/images/publish.svg";
 import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import "./UploadPage.scss";
+import { Link } from "react-router-dom";
 
 const UploadPage = () => {
   const handleClick = (event) => {
@@ -25,7 +26,7 @@ const UploadPage = () => {
               ></input>
             </label>
             <label className="form__label">
-              ADD A NEW VIDEO DESCRIPTION
+              ADD A VIDEO DESCRIPTION
               <textarea
                 className="form__input--description"
                 name="text"
@@ -34,10 +35,12 @@ const UploadPage = () => {
             </label>
           </div>
           <hr className="divider--upload"></hr>
-          <button className="form__button--publish" onClick={handleClick}>
-            <img className="button-icon" src={publishIcon} alt="icon" />
-            PUBLISH
-          </button>
+          <Link to="/">
+            <button className="form__button--publish">
+              <img className="button-icon" src={publishIcon} alt="icon" />
+              PUBLISH
+            </button>
+          </Link>
           <button className="form__button--cancel" onClick={handleClick}>
             CANCEL
           </button>
