@@ -7,6 +7,9 @@ const UploadPage = () => {
   const handleClick = (event) => {
     event.preventDefault();
   };
+  const handleSubmit = () => {
+    alert("Video Uploaded");
+  };
   return (
     <>
       <hr className="divider"></hr>
@@ -36,7 +39,7 @@ const UploadPage = () => {
           </div>
           <hr className="divider--upload"></hr>
           <Link to="/">
-            <button className="form__button--publish">
+            <button className="form__button--publish" onClick={handleSubmit}>
               <img className="button-icon" src={publishIcon} alt="icon" />
               PUBLISH
             </button>
