@@ -1,13 +1,21 @@
 import publishIcon from "../../assets/images/publish.svg";
 import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import "./UploadPage.scss";
-import { Link } from "react-router-dom";
+import { useRef } from "react";
+import axios from "axios";
+
+const baseURL = "http://localhost:8080";
+const videosEndpoint = "videos";
 
 const UploadPage = () => {
-  const handleClick = (event) => {
-    event.preventDefault();
-  };
-  const handleSubmit = () => {
+  const formRef = useRef();
+  const addVideo = async (e) => {
+    e.preventDefault();
+    const { title, description } = formRef.current;
+    await axios.post(`${baseURL}/${videosEndpoint}`, {
+      title: title.value,
+      description: description.value,
+    });
     alert("Video Uploaded");
   };
   return (
@@ -18,35 +26,34 @@ const UploadPage = () => {
         <hr className="divider--upload"></hr>
         <p className="thumbnail">VIDEO THUMBNAIL</p>
         <img className="thumbnail__image" src={uploadPreview} />
-        <form>
+        <form ref={formRef} onSubmit={addVideo}>
           <div className="form__upload">
-            <label className="form__label">
+            <label className="form__label" htmlFor="title">
               TITLE YOUR VIDEO
               <input
+                name="title"
                 type="text"
                 className="form__input--title"
                 placeholder="Add a title to your video"
               ></input>
             </label>
-            <label className="form__label">
+            <label className="form__label" htmlFor="description">
               ADD A VIDEO DESCRIPTION
               <textarea
                 className="form__input--description"
-                name="text"
+                name="description"
                 placeholder="Add a description to your video"
               ></textarea>
             </label>
           </div>
           <hr className="divider--upload"></hr>
-          <Link to="/">
-            <button className="form__button--publish" onClick={handleSubmit}>
-              <img className="button-icon" src={publishIcon} alt="icon" />
-              PUBLISH
-            </button>
-          </Link>
-          <button className="form__button--cancel" onClick={handleClick}>
-            CANCEL
+
+          <button className="form__button--publish">
+            <img className="button-icon" src={publishIcon} alt="icon" />
+            PUBLISH
           </button>
+
+          <button className="form__button--cancel">CANCEL</button>
         </form>
       </section>
     </>

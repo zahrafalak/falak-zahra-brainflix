@@ -20,8 +20,9 @@ const MainPage = () => {
   const [isMainLoaded, setIsMainLoaded] = useState(false);
   const [isSideLoaded, setIsSideLoaded] = useState(false);
 
-  const apiKey = "2d8b3e97-9324-4fa1-9840-920c9b5b7921";
-  const baseURL = "https://project-2-api.herokuapp.com";
+  // const apiKey = "2d8b3e97-9324-4fa1-9840-920c9b5b7921";
+  const baseURL = "http://localhost:8080";
+  const videosEndpoint = "videos";
 
   useEffect(() => {
     const fetchMainVideo = async () => {
@@ -30,7 +31,7 @@ const MainPage = () => {
           // if id is present in the URL, set mainVideoID to that state
           setMainVideoID(id);
           const response = await axios.get(
-            `${baseURL}/videos/${mainVideoID}?api_key=${apiKey}`
+            `${baseURL}/${videosEndpoint}/${mainVideoID}`
           );
           const mainVideoData = await response.data;
           setMainVideoData(mainVideoData);
@@ -39,12 +40,10 @@ const MainPage = () => {
           window.scrollTo(0, 0);
         } else {
           // if no id found, get the id of the first video and set that to state
-          const response1 = await axios.get(
-            `${baseURL}/videos/?api_key=${apiKey}`
-          );
+          const response1 = await axios.get(`${baseURL}/${videosEndpoint}/`);
           setMainVideoID(response1.data[0].id);
           const response = await axios.get(
-            `${baseURL}/videos/${mainVideoID}?api_key=${apiKey}`
+            `${baseURL}/${videosEndpoint}/${mainVideoID}`
           );
           const mainVideoData = response.data;
           setMainVideoData(mainVideoData);
@@ -60,9 +59,7 @@ const MainPage = () => {
   useEffect(() => {
     const fetchSideVideos = async () => {
       try {
-        const response = await axios.get(
-          `${baseURL}/videos/?api_key=${apiKey}`
-        );
+        const response = await axios.get(`${baseURL}/${videosEndpoint}/`);
         const sideVideosArray = response.data;
         setSideVideos(sideVideosArray);
         setIsSideLoaded(true);
