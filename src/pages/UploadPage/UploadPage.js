@@ -15,6 +15,7 @@ const UploadPage = () => {
     await axios.post(`${baseURL}/${videosEndpoint}`, {
       title: title.value,
       description: description.value,
+      image: "http://localhost:8080/images/cute-cat.jpg",
     });
     alert("Video Uploaded");
   };

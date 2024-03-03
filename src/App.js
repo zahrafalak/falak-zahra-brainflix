@@ -12,6 +12,7 @@ function App() {
         <Routes>
           {/* Route for the home page */}
           <Route path="/" element={<MainPage />} />
+          <Route path="/videos" element={<MainPage />} />
           {/* Route for video details page */}
           <Route path="/videos/:id" element={<MainPage />} />
           {/* Route for video upload page */}
