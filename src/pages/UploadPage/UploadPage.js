@@ -3,12 +3,15 @@ import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import "./UploadPage.scss";
 import { useRef } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const baseURL = "http://localhost:8080";
 const videosEndpoint = "videos";
 
 const UploadPage = () => {
   const formRef = useRef();
+  const navigate = useNavigate();
+
   const addVideo = async (e) => {
     e.preventDefault();
     const { title, description } = formRef.current;
@@ -17,8 +20,9 @@ const UploadPage = () => {
       description: description.value,
       image: "http://localhost:8080/images/cute-cat.jpg",
     });
-    alert("Video Uploaded");
+    navigate("/");
   };
+
   return (
     <>
       <hr className="divider"></hr>
@@ -26,7 +30,7 @@ const UploadPage = () => {
         <h1 className="hero__heading">Upload Video</h1>
         <hr className="divider--upload"></hr>
         <p className="thumbnail">VIDEO THUMBNAIL</p>
-        <img className="thumbnail__image" src={uploadPreview} />
+        <img className="thumbnail__image" src={uploadPreview} alt="" />
         <form ref={formRef} onSubmit={addVideo}>
           <div className="form__upload">
             <label className="form__label" htmlFor="title">

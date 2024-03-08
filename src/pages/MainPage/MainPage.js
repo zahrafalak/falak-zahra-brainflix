@@ -20,7 +20,6 @@ const MainPage = () => {
   const [isMainLoaded, setIsMainLoaded] = useState(false);
   const [isSideLoaded, setIsSideLoaded] = useState(false);
 
-  // const apiKey = "2d8b3e97-9324-4fa1-9840-920c9b5b7921";
   const baseURL = "http://localhost:8080";
   const videosEndpoint = "videos";
 
