@@ -6,7 +6,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const baseURL = "http://localhost:8080";
 
-const Form = ({ mainVideoData }) => {
+const Form = ({ mainVideoData, updateComments }) => {
   const formRef = useRef();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -17,11 +17,12 @@ const Form = ({ mainVideoData }) => {
     console.log(comment.value);
     if (id) {
       console.log(id);
-      navigate(`/videos/${id}/comments`);
       await axios.post(`${baseURL}/videos/${id}/comments`, {
         user: "Some User",
         comment: comment.value,
       });
+      updateComments();
+      comment.value = "";
       navigate(`/videos/${id}/comments`);
     }
   };

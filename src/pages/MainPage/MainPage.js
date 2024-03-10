@@ -19,6 +19,7 @@ const MainPage = () => {
   const [sideVideos, setSideVideos] = useState([]);
   const [isMainLoaded, setIsMainLoaded] = useState(false);
   const [isSideLoaded, setIsSideLoaded] = useState(false);
+  const [videoComments, setVideoComments] = useState(0);
 
   const baseURL = "http://localhost:8080";
   const videosEndpoint = "videos";
@@ -32,7 +33,7 @@ const MainPage = () => {
           const response = await axios.get(
             `${baseURL}/${videosEndpoint}/${mainVideoID}`
           );
-          const mainVideoData = await response.data;
+          const mainVideoData = response.data;
           setMainVideoData(mainVideoData);
           setIsMainLoaded(true);
           //scroll to the top of page when component re-renders
@@ -69,6 +70,24 @@ const MainPage = () => {
     fetchSideVideos();
   }, []);
 
+  useEffect(() => {
+    const fetchMain = async () => {
+      try {
+        const resp = await axios.get(`${baseURL}/${videosEndpoint}/${id}`);
+        const mainVideoData = resp.data;
+        console.log(mainVideoData);
+        setMainVideoData(mainVideoData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchMain();
+  }, [videoComments, id]);
+
+  const handleUpdateComment = () => {
+    setVideoComments(videoComments + 1);
+  };
+
   return (
     <>
       {isMainLoaded && isSideLoaded ? (
@@ -77,7 +96,10 @@ const MainPage = () => {
           <div className="video-details">
             <div className="video-details--main">
               <Hero mainVideoData={mainVideoData} />
-              <Form mainVideoData={mainVideoData} />
+              <Form
+                mainVideoData={mainVideoData}
+                updateComments={handleUpdateComment}
+              />
               <Comments mainVideoData={mainVideoData} />
             </div>
             <div className="video-details--side">
