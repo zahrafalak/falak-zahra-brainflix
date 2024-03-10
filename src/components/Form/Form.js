@@ -20,10 +20,16 @@ const Form = ({ mainVideoData, updateComments }) => {
         user: "Some User",
         comment: comment.value,
       });
-      updateComments();
-      comment.value = "";
-      // navigate(`/videos/${id}/comments`);
+    } else {
+      console.log("====> In the else block");
+      const firstVideoID = mainVideoData.id;
+      await axios.post(`${baseURL}/videos/${firstVideoID}/comments`, {
+        user: "Some User",
+        comment: comment.value,
+      });
     }
+    updateComments();
+    comment.value = "";
   };
 
   console.log("=====> mainvidoedata from form", mainVideoData);

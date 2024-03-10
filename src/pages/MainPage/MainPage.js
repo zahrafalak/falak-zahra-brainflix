@@ -95,20 +95,37 @@ const MainPage = () => {
     fetchSideVideos();
   }, []);
 
+  //This useEffect will run every time a new comment is posted
+  //If an id is present, it sends a get request to `${baseURL}/${videosEndpoint}/${id}`
   useEffect(() => {
     const fetchMain = async () => {
-      try {
-        const resp = await axios.get(`${baseURL}/${videosEndpoint}/${id}`);
-        const mainVideoData = resp.data;
-        setMainVideoData(mainVideoData);
-      } catch (error) {
-        console.error(error);
+      if (id) {
+        try {
+          const resp = await axios.get(`${baseURL}/${videosEndpoint}/${id}`);
+          const mainVideoData = resp.data;
+          setMainVideoData(mainVideoData);
+        } catch (error) {
+          console.error(error);
+        }
+      } else {
+        try {
+          const resp = await axios.get(`${baseURL}/${videosEndpoint}/`);
+          const firstVideoID = resp.data[0].id;
+          const resp2 = await axios.get(
+            `${baseURL}/${videosEndpoint}/${firstVideoID}`
+          );
+          const mainVideoData = resp2.data;
+          console.log(mainVideoData);
+          setMainVideoData(mainVideoData);
+        } catch (error) {
+          console.error(error);
+        }
       }
     };
     fetchMain();
   }, [videoComments, id]);
 
-  //When comment is posted, increment the value to cause component re-render
+  //When comment is posted, increment the state to cause component re-render
   const handleUpdateComment = () => {
     setVideoComments(videoComments + 1);
     console.log("=====> comment count", videoComments);
