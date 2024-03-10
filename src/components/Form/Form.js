@@ -2,7 +2,6 @@ import avatarImage from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/images/add_comment.svg";
 import axios from "axios";
 import { useRef } from "react";
-// import { useParams, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 const baseURL = "http://localhost:8080";
@@ -10,7 +9,6 @@ const baseURL = "http://localhost:8080";
 const Form = ({ mainVideoData, updateComments }) => {
   const formRef = useRef();
   const { id } = useParams();
-  // const navigate = useNavigate();
 
   const postComment = async (e) => {
     e.preventDefault();
@@ -21,7 +19,6 @@ const Form = ({ mainVideoData, updateComments }) => {
         comment: comment.value,
       });
     } else {
-      console.log("====> In the else block");
       const firstVideoID = mainVideoData.id;
       await axios.post(`${baseURL}/videos/${firstVideoID}/comments`, {
         user: "Some User",
@@ -31,8 +28,6 @@ const Form = ({ mainVideoData, updateComments }) => {
     updateComments();
     comment.value = "";
   };
-
-  console.log("=====> mainvidoedata from form", mainVideoData);
 
   return (
     <>

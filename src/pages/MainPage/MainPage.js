@@ -40,14 +40,12 @@ const MainPage = () => {
           // if no id found, get the id of the first video and set that to state
 
           // -----------------------------------------------------------------
-          // We go a get request to ${baseURL}/${videosEndpoint}
+          // We do a get request to ${baseURL}/${videosEndpoint}
           // which returns a list of all the side videos
           // then we take the id from the first object and store it as state
 
           const response1 = await axios.get(`${baseURL}/${videosEndpoint}/`);
-          console.log("=====> response1", response1);
           setMainVideoID(response1.data[0].id);
-          console.log("=====> mainVideoID", mainVideoID);
 
           // -----------------------------------------------------------------
 
@@ -55,21 +53,10 @@ const MainPage = () => {
           // This time to get the content for just the object related to this id
 
           if (mainVideoID !== "") {
-            console.log(
-              "=====> Request Dest",
-              `${baseURL}/${videosEndpoint}/${mainVideoID}`
-            );
             const response = await axios.get(
               `${baseURL}/${videosEndpoint}/${mainVideoID}`
             );
-            console.log("=====> Response from ID endpoint", response);
-            console.log(
-              "=====> Response from ID endpoint - comments",
-              response.data.comments
-            );
-
             const mainVideoData = response.data;
-            console.log("=====> mainVideoData saved to state", mainVideoData);
             setMainVideoData(mainVideoData);
             setIsMainLoaded(true);
           }
@@ -81,6 +68,7 @@ const MainPage = () => {
     fetchMainVideo();
   }, [mainVideoID, id]);
 
+  //This useEffect only runs on first render to get all the side videos data
   useEffect(() => {
     const fetchSideVideos = async () => {
       try {
@@ -105,7 +93,7 @@ const MainPage = () => {
           const mainVideoData = resp.data;
           setMainVideoData(mainVideoData);
         } catch (error) {
-          console.error(error);
+          console.error("Error fetching main video:", error);
         }
       } else {
         try {
@@ -115,10 +103,9 @@ const MainPage = () => {
             `${baseURL}/${videosEndpoint}/${firstVideoID}`
           );
           const mainVideoData = resp2.data;
-          console.log(mainVideoData);
           setMainVideoData(mainVideoData);
         } catch (error) {
-          console.error(error);
+          console.error("Error fetching first video:", error);
         }
       }
     };
@@ -128,7 +115,6 @@ const MainPage = () => {
   //When comment is posted, increment the state to cause component re-render
   const handleUpdateComment = () => {
     setVideoComments(videoComments + 1);
-    console.log("=====> comment count", videoComments);
   };
 
   return (

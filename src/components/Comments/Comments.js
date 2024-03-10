@@ -2,7 +2,6 @@ import "./Comments.scss";
 
 const VideoComments = ({ mainVideoData }) => {
   const comments = mainVideoData.comments;
-  console.log("======> comments in comments", comments);
   return (
     <>
       {comments ? (
