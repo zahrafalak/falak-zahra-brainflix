@@ -12,9 +12,7 @@ import axios from "axios";
 const MainPage = () => {
   const { id } = useParams();
 
-  const [mainVideoID, setMainVideoID] = useState(
-    "84e96018-4022-434e-80bf-000ce4cd12b8"
-  );
+  const [mainVideoID, setMainVideoID] = useState("");
   const [mainVideoData, setMainVideoData] = useState(null);
   const [sideVideos, setSideVideos] = useState([]);
   const [isMainLoaded, setIsMainLoaded] = useState(false);
@@ -40,14 +38,41 @@ const MainPage = () => {
           window.scrollTo(0, 0);
         } else {
           // if no id found, get the id of the first video and set that to state
+
+          // -----------------------------------------------------------------
+          // We go a get request to ${baseURL}/${videosEndpoint}
+          // which returns a list of all the side videos
+          // then we take the id from the first object and store it as state
+
           const response1 = await axios.get(`${baseURL}/${videosEndpoint}/`);
+          console.log("=====> response1", response1);
           setMainVideoID(response1.data[0].id);
-          const response = await axios.get(
-            `${baseURL}/${videosEndpoint}/${mainVideoID}`
-          );
-          const mainVideoData = response.data;
-          setMainVideoData(mainVideoData);
-          setIsMainLoaded(true);
+          console.log("=====> mainVideoID", mainVideoID);
+
+          // -----------------------------------------------------------------
+
+          // Then we do another request to ${baseURL}/${videosEndpoint}/${mainVideoID}
+          // This time to get the content for just the object related to this id
+
+          if (mainVideoID !== "") {
+            console.log(
+              "=====> Request Dest",
+              `${baseURL}/${videosEndpoint}/${mainVideoID}`
+            );
+            const response = await axios.get(
+              `${baseURL}/${videosEndpoint}/${mainVideoID}`
+            );
+            console.log("=====> Response from ID endpoint", response);
+            console.log(
+              "=====> Response from ID endpoint - comments",
+              response.data.comments
+            );
+
+            const mainVideoData = response.data;
+            console.log("=====> mainVideoData saved to state", mainVideoData);
+            setMainVideoData(mainVideoData);
+            setIsMainLoaded(true);
+          }
         }
       } catch (error) {
         console.error("Error fetching main video:", error);
@@ -86,6 +111,7 @@ const MainPage = () => {
   //When comment is posted, increment the value to cause component re-render
   const handleUpdateComment = () => {
     setVideoComments(videoComments + 1);
+    console.log("=====> comment count", videoComments);
   };
 
   return (
