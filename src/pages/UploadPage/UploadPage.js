@@ -40,6 +40,7 @@ const UploadPage = () => {
                 type="text"
                 className="form__input--title"
                 placeholder="Add a title to your video"
+                required
               ></input>
             </label>
             <label className="form__label" htmlFor="description">
@@ -48,6 +49,7 @@ const UploadPage = () => {
                 className="form__input--description"
                 name="description"
                 placeholder="Add a description to your video"
+                required
               ></textarea>
             </label>
           </div>

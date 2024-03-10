@@ -44,6 +44,7 @@ const Form = ({ mainVideoData, updateComments }) => {
                     className="form__input"
                     name="comment"
                     placeholder="Add a new comment"
+                    required
                   ></textarea>
                 </label>
               </div>
