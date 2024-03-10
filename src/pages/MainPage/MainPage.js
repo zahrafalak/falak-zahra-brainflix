@@ -75,7 +75,6 @@ const MainPage = () => {
       try {
         const resp = await axios.get(`${baseURL}/${videosEndpoint}/${id}`);
         const mainVideoData = resp.data;
-        console.log(mainVideoData);
         setMainVideoData(mainVideoData);
       } catch (error) {
         console.error(error);
@@ -84,6 +83,7 @@ const MainPage = () => {
     fetchMain();
   }, [videoComments, id]);
 
+  //When comment is posted, increment the value to cause component re-render
   const handleUpdateComment = () => {
     setVideoComments(videoComments + 1);
   };

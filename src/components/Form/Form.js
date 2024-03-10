@@ -14,9 +14,7 @@ const Form = ({ mainVideoData, updateComments }) => {
   const postComment = async (e) => {
     e.preventDefault();
     const { comment } = formRef.current;
-    console.log(comment.value);
     if (id) {
-      console.log(id);
       await axios.post(`${baseURL}/videos/${id}/comments`, {
         user: "Some User",
         comment: comment.value,
